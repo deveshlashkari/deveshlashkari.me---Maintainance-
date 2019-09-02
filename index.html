@@ -23,7 +23,7 @@
 
 
 </head>
-<body>
+<body onload="typeWriter()">
 	
 	<div class="main-area center-text" style="background-image:url(data/image/countdown-3-1600x900.jpg);">
 		
@@ -50,7 +50,21 @@
 			</div><!-- display-table -->
 		</div><!-- display-table-cell -->
 	</div><!-- main-area -->
-
+	<script>
+		var i = 0;
+		var txt = document.getElementById("demo").innerHTML;
+		document.getElementById('demo').innerHTML = '';
+		console.log(txt);
+		var speed = 60;
+		
+		function typeWriter() {
+		  if (i < txt.length) {
+			document.getElementById("demo").innerHTML += txt.charAt(i);
+			i++;
+			setTimeout(typeWriter, speed);
+		  }
+		}
+		</script>
 			
 </body>
 </html>
